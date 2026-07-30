@@ -1,0 +1,27 @@
+'use client';
+
+export default function Navbar() {
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 h-[70px] bg-white/90 backdrop-blur-xl border-b border-div">
+      {/* Logo */}
+      <a href="/" className="font-display text-xl font-normal tracking-wide text-ink no-underline">
+        TruGhar<sup className="text-[0.5rem] text-clay ml-0.5 font-body font-light tracking-widest">Mumbai</sup>
+      </a>
+
+      {/* Links — hidden on mobile */}
+      <div className="hidden md:flex gap-10">
+        <a href="#method" className="text-[0.68rem] font-normal tracking-[0.15em] uppercase text-ink3 no-underline hover:text-ink transition-base">
+          Our Method
+        </a>
+        <a href="#contact" className="text-[0.68rem] font-normal tracking-[0.15em] uppercase text-ink3 no-underline hover:text-ink transition-base">
+          Speak With Us
+        </a>
+      </div>
+
+      {/* Phone */}
+      <a href="tel:+919762866937" className="font-mono text-[0.7rem] text-ink2 no-underline border-l border-div2 pl-6 hover:text-clay transition-base">
+        +91&nbsp;97628&nbsp;66937
+      </a>
+    </nav>
+  );
+}

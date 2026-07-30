@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════
+   TRUGHAR DESIGN TOKENS
+   Swiss Editorial Modernism
+═══════════════════════════════════ */
+
+@theme {
+  --color-ink:    #0D0C09;
+  --color-ink2:   #38372F;
+  --color-ink3:   #7A7870;
+  --color-ink4:   #C2C0B8;
+  --color-clay:   #B5522A;
+  --color-clay2:  #E8C4B0;
+  --color-clay3:  #FAF0E8;
+  --color-sage:   #2D5C44;
+  --color-sage-light: #EBF5EF;
+  --color-off:    #F8F7F4;
+  --color-off2:   #F0EEE9;
+  --color-white:  #FFFFFF;
+  --color-div:    rgba(13, 12, 9, 0.09);
+  --color-div2:   rgba(13, 12, 9, 0.16);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Epilogue', -apple-system, sans-serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+}
+
+/* ═══════════════════════════════════
+   BASE
+═══════════════════════════════════ */
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--color-ink);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════ */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ═══════════════════════════════════
+   TRANSITIONS
+═══════════════════════════════════ */
+.transition-base {
+  transition: all 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.transition-fast {
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ═══════════════════════════════════
+   BUTTON BASE
+═══════════════════════════════════ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: var(--color-ink);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-clay);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════
+   SCROLL ANIMATIONS
+═══════════════════════════════════ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
