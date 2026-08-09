@@ -166,6 +166,15 @@ export default function SearchBar({
         </span>
       </div>
 
+      <button
+  type="button"
+  onClick={() => { if (text.length > 15) extractFromText(text); }}
+  className="btn-primary w-full rounded mt-2"
+>
+  <span>Search</span>
+  <span>→</span>
+</button>
+
       {/* Hint text */}
       <p className="text-[0.7rem] text-[var(--text-muted)] mt-2 leading-relaxed">
         Type naturally — mention{' '}

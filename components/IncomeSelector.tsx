@@ -13,7 +13,7 @@ const BRACKETS: IncomeBracket[] = ['A', 'B', 'C', 'D'];
 export default function IncomeSelector({ value, onChange }: IncomeSelectorProps) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[0.68rem] text-ink4 tracking-wide flex items-center gap-1.5">
+      <label className="text-[0.75rem] text-ink4 tracking-wide flex items-center gap-1.5">
         <span>💰</span> Monthly household income
       </label>
 
@@ -33,7 +33,7 @@ export default function IncomeSelector({ value, onChange }: IncomeSelectorProps)
                 }`}
             >
               <span
-                className={`font-display text-[0.9rem] block mb-0.5
+                className={`font-display text-[1rem] block mb-0.5
                   ${selected ? 'text-white' : 'text-ink'}`}
               >
                 {bracket.shortLabel}

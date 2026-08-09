@@ -86,22 +86,12 @@ export default function Home() {
         <section className="pt-[70px] border-b border-[var(--border)]">
           {/* Hero headline */}
           <div className="relative px-8 md:px-16 pt-12 md:pt-20 pb-4">
-            <div className="absolute right-4 md:right-8 top-8 font-display text-[120px] md:text-[200px] font-extralight text-[var(--border)] select-none pointer-events-none leading-none">
-              4
-            </div>
+  
+          <h1 className="font-display text-[clamp(2.6rem,7vw,5.5rem)] font-extralight leading-[0.92] tracking-tight mb-3">
+            Find your home in <span className="italic text-[#B5522A] font-light">10 sec</span>
+          </h1>
 
-            <p className="text-[0.62rem] font-normal tracking-[0.24em] uppercase text-[#B5522A] mb-6 flex items-center gap-3">
-              <span className="w-9 h-px bg-[#B5522A]" />
-              Mumbai real estate &middot; reimagined
-            </p>
-
-            <h1 className="font-display text-[clamp(2.6rem,7vw,5.5rem)] font-extralight leading-[0.92] tracking-tight mb-3">
-              Not the most listings.
-              <br />
-              <span className="italic text-[#B5522A] font-light">The right one.</span>
-            </h1>
-
-            <p className="text-[0.85rem] text-[var(--text-secondary)] leading-relaxed max-w-sm">
+            <p className="text-[1.5rem] text-[var(--text-secondary)] leading-relaxed max-w-sm">
               Tell us what you&apos;re looking for.
             </p>
           </div>
