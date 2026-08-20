@@ -1,6 +1,6 @@
 import { WizardInput, RecommendResponse, EnquiryInput } from './types';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || '';
+const API_BASE = '';
 
 // ── Get property recommendations ──────────────────────────────────────────────
 export async function getRecommendations(input: WizardInput): Promise<RecommendResponse> {
