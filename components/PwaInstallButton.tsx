@@ -1,57 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
+import { usePwaInstall } from "@/lib/pwaInstall";
 
 interface PwaInstallButtonProps {
   text?: string;
   className?: string;
 }
 
-export default function PwaInstallButton({ text = "Install App", className = "" }: PwaInstallButtonProps) {
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
-  const [isInstallable, setIsInstallable] = useState(false);
-  const [isInstalled, setIsInstalled] = useState(false);
+export default function PwaInstallButton({ text = "Install TruGhar", className = "" }: PwaInstallButtonProps) {
+  const { canInstall, install } = usePwaInstall();
 
-  useEffect(() => {
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      setIsInstalled(true);
-    }
-
-    const handleBeforeInstallPrompt = (e: any) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-      setIsInstallable(true);
-    };
-
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-
-    const handleAppInstalled = () => {
-      setIsInstallable(false);
-      setIsInstalled(true);
-    };
-    
-    window.addEventListener("appinstalled", handleAppInstalled);
-
-    return () => {
-      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-      window.removeEventListener("appinstalled", handleAppInstalled);
-    };
-  }, []);
-
-  const handleInstallClick = async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === "accepted") {
-      setIsInstallable(false);
-    }
-    setDeferredPrompt(null);
-  };
-
-  if (!isInstallable || isInstalled) return null;
+  if (!canInstall) return null;
 
   return (
     <button
-      onClick={handleInstallClick}
+      type="button"
+      onClick={install}
       className={`flex items-center gap-2 cursor-pointer ${className}`}
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

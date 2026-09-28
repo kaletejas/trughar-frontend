@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import PwaInstallButton from '../components/PwaInstallButton';
+import { pwaCaptureScript } from '@/lib/pwaCaptureScript';
 
 export const viewport: Viewport = {
   themeColor: '#4B2D35',
@@ -30,11 +30,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        {/* Captures the browser install prompt before hydration for the install buttons */}
+        <script dangerouslySetInnerHTML={{ __html: pwaCaptureScript }} />
       </head>
-      <body>
-        {children}
-        <PwaInstallButton />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
