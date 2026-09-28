@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="512" height="512">
+  <!-- Background -->
+  <rect width="200" height="200" rx="55" fill="#4B2D35" />
+  
+  <!-- Left Half -->
+  <polygon points="96,61 32,61 42,77 64,77 64,121 96,139 96,123 80,114 80,77 96,77" fill="#C19F6A" />
+  
+  <!-- Right Half -->
+  <polygon points="104,61 168,61 158,77 136,77 136,121 104,139 104,123 120,114 120,77 104,77" fill="#C19F6A" />
+</svg>

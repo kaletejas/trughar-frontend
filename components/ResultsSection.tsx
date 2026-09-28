@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Property, BracketInfo } from '@/lib/types';
 import PropertyCard from './PropertyCard';
+import PwaInstallButton from './PwaInstallButton';
 
 interface ResultsSectionProps {
   properties: Property[];
@@ -132,7 +133,7 @@ export default function ResultsSection({
         )}
 
         {/* Bottom CTA — single advisor contact */}
-        <div className="text-center py-10 border-t border-div">
+        <div className="flex flex-col items-center text-center py-10 border-t border-div">
           <p className="text-[0.6rem] tracking-[0.2em] uppercase text-ink4 mb-3">
             Interested? Talk to our advisor.
           </p>
@@ -142,9 +143,13 @@ export default function ResultsSection({
           >
             +91 97628 66937
           </a>
-          <p className="text-[0.65rem] text-ink4 mb-6">
+          <p className="text-[0.65rem] text-ink4 mb-5">
             Monday – Saturday · 9 AM – 7 PM · No spam · One advisor, complete focus
           </p>
+          <PwaInstallButton
+            text="Install TruGhar — get faster access next time"
+            className="text-[0.65rem] tracking-wide bg-[#4B2D35] text-[#C19F6A] px-5 py-1.5 rounded-full hover:bg-[#3a2229] transition-base border border-[#C19F6A]/30 mb-6"
+          />
           <button
             type="button"
             onClick={onReset}

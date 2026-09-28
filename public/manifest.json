@@ -1,0 +1,29 @@
+{
+  "name": "TruGhar",
+  "short_name": "TruGhar",
+  "description": "Your modern real estate application.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#4B2D35",
+  "theme_color": "#4B2D35",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
